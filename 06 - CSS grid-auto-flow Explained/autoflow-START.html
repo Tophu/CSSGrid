@@ -12,12 +12,22 @@
   <div class="container">
     <div class="item">1</div>
     <div class="item">2</div>
+    <div class="item">3 Implicit</div>
+    <div class="item">4 Implicit</div>
+    <div class="item">5 Implicit</div>
+    <div class="item">6 Implicit</div>
+    <div class="item">7 Implicit</div>
+    <div class="item">8 Implicit</div>
   </div>
 
   <style>
     .container {
       display: grid;
       grid-gap: 20px;
+      grid-template-columns: 400px 200px;
+      /* Automatically add implicit element as a column (doesn't work well with row), but not used much */
+      grid-auto-flow: column;
+      grid-auto-columns: 250px;
     }
   </style>
 </body>
