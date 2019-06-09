@@ -14,7 +14,7 @@
     <div class="item">2</div>
     <div class="item">3</div>
     <div class="item">4</div>
-    <div class="item">5</div>
+    <div class="item">5 Content</div>
     <div class="item">6</div>
     <div class="item">7</div>
     <div class="item">8</div>
@@ -30,7 +30,16 @@
   <style>
     .container {
       display: grid;
+      height: 600px;
       grid-gap: 20px;
+      /* CSS Variable */
+      border: 10px solid var(--yellow);
+      /* The auto value adjusts the max size of the content, in this case using columns, the auto will adjust to the width of the max content and will apply to the rest of the columns */
+      grid-template-columns: auto 1fr auto 1fr;
+      /* Fractions using fr units*/
+      /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+      /* By default a height of a grid is based on the contents inside the grid, but the default width of the grid is as wide as the viewport. Without a declared height, there would be no change in the rows*/
+      /* grid-template-rows: 1fr 2fr 1fr 1fr; */
     }
   </style>
 </body>
