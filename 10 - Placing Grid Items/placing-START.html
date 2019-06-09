@@ -18,7 +18,7 @@
     <div class="item item6">6</div>
     <div class="item item7">7</div>
     <div class="item item8">8</div>
-    <div class="item item8">💩</div>
+    <div class="item comet">☄</div>
     <div class="item item9">9</div>
     <div class="item item10">10</div>
     <div class="item item11">11</div>
@@ -48,6 +48,32 @@
       display: grid;
       grid-gap: 20px;
       grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+
+    .comet {
+      /* Start from the track number */
+      /* grid-column-start: 4; */
+      /* End at the track number */
+      /* grid-column-end: 6; */
+
+      /* Use the shorthand for both properties above with grid-column */
+      /* grid-column: 4 / 6; */
+
+      /* Can also use span using grid-column in this example the grid item will will span 2 columns and END at the 5th track line */
+      /* grid-column: span 2 / 6; */
+
+      /* In this example the grid item will START at track line 1 and will span 3 columns */
+      /* grid-column: 1 / span 3; */
+
+      /* Use -1 To check the maximum amount of tracks in the grid. Span does NOT work with negative numbers. In this example the comet will cover from the start to the end of the track.*/
+      /* grid-column: 1 / -1; */
+
+      /* Can also use -2,-3 etc. Negative numbers takes away from the last track */
+      grid-column: 1 / span 2;
+      /* This works with grid-row and span */
+      grid-row: 2 / -2;
+      background: rgb(40, 49, 134);
     }
   </style>
 </body>
