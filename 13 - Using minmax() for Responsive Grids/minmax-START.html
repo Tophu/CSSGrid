@@ -21,7 +21,20 @@
       display: grid;
       grid-gap: 20px;
       border: 10px solid var(--yellow);
-      grid-template-columns: repeat(auto-fill, 150px);
+      /* Using auto-fill with a set value may not work well if the content inside the grid item is larger than the set value */
+      /* grid-template-columns: repeat(auto-fill, 100px); */
+
+      /* Using autofill with minmax(minValue, maxValue) will automatically scale the width with given values and extra column space equal to the viewport*/
+      /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+
+      /* Can also use auto-fit with minmax, which will fit each grid items evenly to the viewport*/
+      /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+
+      /* auto works as a value */
+      /* grid-template-columns: auto 150px 150px 150px; */
+
+      /* Using fit-content() property, similar to autofill extra column space, but the property sets the specific grid item a certain value. */
+      grid-template-columns: fit-content(100px) 150px 150px 150px;
     }
   </style>
 </body>
