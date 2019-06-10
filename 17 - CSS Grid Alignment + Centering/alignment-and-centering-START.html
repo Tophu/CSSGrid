@@ -70,7 +70,69 @@
     .container {
       display: grid;
       grid-gap: 20px;
-      grid-template-columns: repeat(10, 1fr);
+      border: 10px solid var(--yellow);
+      grid-template-columns: repeat(5, 150px);
+      grid-template-rows: repeat(5, 100px);
+      /* Width based on the size of content when using 'center' */
+      /* justify-items: center; */
+
+      /* Width stretches to max width of the grid */
+      /* justify-items: stretch; */
+
+      /* Aligns the item at the start of the column (to the left) */
+      /* justify-items: start; */
+
+      /* Aligns the item at the end of the column (to the right) */
+      /* justify-items: end; */
+
+      /* Aligns at the top of the row, if row is given a height */
+      /* align-items: start; */
+
+      /* Aligns at the bottom of the row, if row is given a height */
+      /* align-items: end; */
+
+      /* Align vertical */
+      /* align-items: center; */
+      /* Align horizontal */
+      /* justify-items: center; */
+
+      /* Shorthand, align both vertical and horizontal */
+      place-items: stretch stretch;
+      /* Dividing each content evenly based on the space around*/
+      /* justify-content: space-around; */
+
+      /* Dividing each content evenly based on the space between*/
+      justify-content: space-between;
+    }
+
+    .itm {
+      background: white;
+    }
+
+    /* justify-self are used for individual classes */
+    .itm3 {
+      justify-self: start;
+    }
+
+    .itm4 {
+      justify-self: center;
+    }
+
+    .itm5 {
+      justify-self: end;
+    }
+
+    /* align-self are used for individual classes */
+    .itm6 {
+      align-self: start;
+    }
+
+    .itm7 {
+      align-self: center;
+    }
+
+    .itm8 {
+      align-self: end;
     }
   </style>
 </body>
