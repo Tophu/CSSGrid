@@ -29,6 +29,47 @@
     .container {
       display: grid;
       grid-gap: 20px;
+      grid-template-columns: 1fr 500px 1fr;
+      grid-template-rows: 150px 150px 100px;
+      /* One line code of grid-template-areas and names can be given to the areas */
+      /* grid-template-areas: "sidebar-1 content sidebar-2"; */
+      /* Multiline of code using grid-template-areas. It's displayed just like a grid and will therefore, have the same layout on the web. Can also use tab for legibility*/
+      grid-template-areas:
+        "sidebar-1 content sidebar-2"
+        "sidebar-1 content sidebar-2"
+        "footer footer footer";
+      /* Use . for empty column */
+      /* grid-template-areas:
+        "sidebar-1 content sidebar-2"
+        "sidebar-1 content sidebar-2"
+        "footer footer ."; */
+    }
+
+    /* The GIVEN NAMES can be used as a VALUE for the grid-area property, this is very useful for creating a layout of a web and saves time*/
+    .footer {
+      grid-area: footer;
+    }
+
+    .item1 {
+      grid-area: sidebar-1;
+    }
+
+    .item2 {
+      grid-area: content;
+    }
+
+    .item3 {
+      grid-area: sidebar-2;
+    }
+
+    /* Media Queries using grid-template-areas */
+    @media (max-width: 700px) {
+      .container {
+        grid-template-areas:
+          "content content content"
+          "sidebar-1 sidebar-1 sidebar-2"
+          "footer footer footer";
+      }
     }
   </style>
 </body>
