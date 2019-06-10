@@ -46,8 +46,18 @@
     .container {
       display: grid;
       grid-gap: 20px;
-      grid-template-columns: 1fr 500px 1fr;
-      grid-template-rows: repeat(10, auto);
+      /* Naming grid lines for columns with [name] before the values and after. Can also give it multiple names in the brackets like using .classes*/
+      grid-template-columns:
+        [sidebar-start site-left] 1fr [sidebar-end content-start] 500px [content-end] 1fr [site-right];
+      /* Naming grid lines for rows */
+      grid-template-rows: [content-top] repeat(10, auto) [content-bottom];
+    }
+
+    .item3 {
+      background: darkseagreen;
+      /* Using the line names as values */
+      grid-column: content-start;
+      grid-row: content-top / content-bottom;
     }
   </style>
 </body>
