@@ -65,3 +65,32 @@ img {
   font-size: 60px;
   font-weight: 300;
 }
+
+/* Navigation */
+.menu ul {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 0;
+  margin: 20px 0;
+  list-style: none;
+}
+
+.menu a {
+  background: var(--yellow);
+  /* Links are inline by default, when using the background: colour with display: block, the colour will span across all the links in the UL, making it DRY and easy to create a button with grid-gap: declared inside the UL  */
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  color: var(--black);
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+/* Attribute Selector  */
+[aria-controls="menu-list"] {
+  display: none;
+}
+
+/* Features */
