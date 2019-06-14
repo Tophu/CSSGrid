@@ -10,16 +10,44 @@
 </head>
 
 <body>
-
-  <div class="grid">
+  <!-- Use a CSS variable declared inside the grid-template-columns property -->
+  <div class="grid" style="--cols: 10;">
     <div class="item">1</div>
-    <div class="item">2</div>
+    <!-- Use the css variable in style and give it a value -->
+    <div class="item" style="--span: 7;">Bootstrappy</div>
     <div class="item">3</div>
     <div class="item">4</div>
+    <!-- Adding a grid nested inside a grid item, the items will be joined, but can be separated by adding grid-gap -->
+    <div class="item">
+      <div class="grid" style="--cols: 5;">
+        <div class="item">1</div>
+        <div class="item">2</div>
+      </div>
+    </div>
   </div>
 
   <style>
-    .grid {}
+    .grid {
+      display: grid;
+      grid-gap: 20px;
+      /* grid-template-columns: repeat(12, 1fr); */
+      /* grid-template-columns: repeat(12, minmax(0, 1fr)); */
+
+      /* Can use CSS variables as an argument */
+      /* grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); */
+
+      /* using css variables can also have a fallback value (remove the css variable from grid in the html to see the example) */
+      grid-template-columns: repeat(var(--cols, 12), minmax(0, 1fr));
+    }
+
+    .item {
+      min-width: 0;
+      width: 100%;
+      /* Declare css variable */
+      --span: 1;
+      /* Using the css variable span */
+      grid-column: span var(--span);
+    }
   </style>
 
 </body>
